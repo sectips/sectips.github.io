@@ -160,54 +160,84 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 215, 10, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 50% 30%, rgba(255, 215, 10, 0.08) 0%, transparent 60%);
             pointer-events: none;
         }
 
         .hero .container {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 900px;
             text-align: center;
         }
 
-        .hero h1 {
-    font-size: clamp(28px, 5.5vw, 56px);
-    font-weight: 900;
-    line-height: 1.25;
-    margin-bottom: 20px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-        .hero .highlight {
-            display: inline-block;
-            margin-top: 12px;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 77, 77, 0.1);
+            color: #ff4d4d;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 77, 77, 0.2);
+            animation: slideDown 0.8s ease-out;
         }
 
-        .hero p {
-            font-size: 18px;
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            animation: slideUp 0.8s ease-out;
+            text-wrap: balance;
+        }
+
+        .hero .highlight {
+            display: inline-block;
+        }
+
+        .hero-lead {
+            font-size: clamp(18px, 2.5vw, 22px);
             color: var(--text-secondary);
             margin-bottom: 40px;
-            max-width: 600px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
+            text-wrap: balance;
+            animation: slideUp 0.8s ease-out 0.1s backwards;
+        }
+
+        .hero-lead strong {
+            color: var(--text-primary);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
             animation: slideUp 0.8s ease-out 0.2s backwards;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 16px 40px;
+            padding: 18px 48px;
             background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-yellow-light) 100%);
             color: var(--bg-main);
             text-decoration: none;
             border-radius: 8px;
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 800;
+            font-size: 18px;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            animation: slideUp 0.8s ease-out 0.4s backwards;
             box-shadow: 0 10px 30px rgba(255, 215, 10, 0.2);
         }
 
@@ -218,6 +248,13 @@
 
         .cta-button:active {
             transform: translateY(-2px);
+        }
+
+        .hero-note {
+            font-size: 14px;
+            color: var(--text-secondary);
+            opacity: 0.8;
+            font-weight: 600;
         }
 
         /* Seções Gerais */
@@ -929,24 +966,19 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
+            <div class="hero-badge">🚨 ATENÇÃO: Não seja a próxima vítima</div>
             <h1>
-    Golpes online podem destruir sua vida em minutos
-    <br>
-    E começam com uma conversa <span class="highlight">inocente</span>
-</h1>
-<p>
-    Aqui você aprende exatamente como identificar antes de cair
-</p>
-            <p>
-                Golpes em chats e redes sociais não são só sobre dinheiro.
-                <br>
-                São sobre chantagem, exposição e manipulação emocional.
-                <br>
-                <strong>Aprenda a se proteger AGORA.</strong>
+                O golpe da chantagem começa com uma conversa <span class="highlight">inocente</span>.
+            </h1>
+            <p class="hero-lead">
+                Em pouco tempo você está em uma chantagem que pode destruir sua vida, seu relacionamento e seu emprego. Entenda o padrão deles e <strong>saiba como se defender.</strong>
             </p>
-            <button class="cta-button" onclick="document.getElementById('alerta').scrollIntoView()">
-                Aprender a se Proteger
-            </button>
+            <div class="hero-cta-group">
+                <button class="cta-button" onclick="document.getElementById('alerta').scrollIntoView()">
+                    Aprender a me Proteger
+                </button>
+                <span class="hero-note">Leitura de 3 minutos que pode salvar sua reputação.</span>
+            </div>
         </div>
     </section>
 
